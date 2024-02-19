@@ -6,42 +6,86 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="number" id="nmbr">
+    <!-- <input type="number" id="nmbr">
     <div id="display">5</div>
     <button onclick="addition()">+</button>
-    <button onclick="substraction()">-</button>
+    <button onclick="substraction()">-</button> -->
+
+    <!-- Loopss  -->
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <input type="text" id="input3">
+    <input type="text" id="input4">
+    <button onclick="result()">Display Result</button>
 
     <script>
        
 
-       function addition(){
-        let a = +(document.getElementById("nmbr").value)
-       let b = +(document.getElementById("display").innerHTML)
+    //    function addition(){
+    //     let a = +(document.getElementById("nmbr").value)
+    //    let b = +(document.getElementById("display").innerHTML)
 
 
 
-        if(a>0){
-            document.getElementById("display").innerHTML=a + b;
-        }
-        else{
-            document.getElementById("display").innerHTML=++b
-        }
+    //     if(a>0){
+    //         document.getElementById("display").innerHTML=a + b;
+    //     }
+    //     else{
+    //         document.getElementById("display").innerHTML=++b
+    //     }
 
 
 
-       }
-       function substraction(){
-        let a = +(document.getElementById("nmbr").value)
-       let b = +(document.getElementById("display").innerText)
+    //    }
+    //    function substraction(){
+    //     let a = +(document.getElementById("nmbr").value)
+    //    let b = +(document.getElementById("display").innerText)
 
-       if(a>0){
-            document.getElementById("display").innerHTML=b-a;
-        }
-        else{
-            document.getElementById("display").innerHTML=--b
+    //    if(a>0){
+    //         document.getElementById("display").innerHTML=b-a;
+    //     }
+    //     else{
+    //         document.getElementById("display").innerHTML=--b
+    //     }
+        
+    // }
+
+
+    // Loops 
+
+    
+
+    // function result(){
+    //     let inputs=document.getElementsByTagName("input")
+    // let sum = 0;
+    //     for(let i=0;i<inputs.length;i++){
+    //         sum = sum + +(inputs[i].value);
+
+    //     }
+    //     console.log(sum);
+    // }
+
+    function result(){
+        let inputs=document.getElementsByTagName("input")
+        let even =inputs[0].value;
+       
+        for(i=0;i<inputs.length;i++){
+            
+
+            if(inputs[i].value%2==0){
+                even=inputs[i].value;
+                console.log(alert(even));
+            }
+           
         }
         
     }
+
+
+
+
+
+    
     </script>
 </body>
 </html>
