@@ -1,0 +1,37 @@
+<!DOCTYPE html>                                  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <input type="text" id="contactNumber">
+    <button onclick="saveInfo()">saveInfo</button>
+    <table id="display" border="2px"></table>
+    <script>
+       const saveInfo = ()=>{
+        let o = JSON.parse(localStorage.getItem("employee"))||[]
+            let obj ={
+                "name" : document.getElementById("name").value,
+                "contactNumber" : document.getElementById("contactNumber").value,
+            }
+            o.push(obj)
+            localStorage.setItem("employee",JSON.stringify(o));
+
+            display(o)
+        }
+
+        function display(a){
+            let p = a.map((v,i)=>{
+            return `<tr><td>${v.name}<button onclick="">delete</button><button>edit</button></td><td>${v.contactNumber}<button>delete</button><button>edit</button></td><td></td></tr>`
+        })
+        document.getElementById("display").innerHTML=p.join(" ")
+        }
+
+        
+        
+    </script>
+</body>
+</html>

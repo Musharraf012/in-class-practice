@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="firstName">
+    <input type="text" id="lastName">
+    <input type="text" id="title">
+    <input type="email" id="email">
+    <input type="password" id="password">
+    <input type="password" id="confirmPassword">
+    <input type="checkbox" id="acceptTerms">
+    <button onclick="regi()">registration</button>
+    <script>
+        const regi =()=>{
+            let obj={
+         "firstName":document.getElementById("firstName").value,
+         "lastName":document.getElementById("lastName").value,
+         "title":document.getElementById("title").value,
+         "email":document.getElementById("email").value,
+        "password":document.getElementById("password").value,
+        "confirmPassword":document.getElementById("confirmPassword").value,
+         "acceptTerms":document.getElementById("acceptTerms").checked
+    }
+        
+
+        fetch("https://real-pear-fly-kilt.cyclic.app/accounts/register",{
+            method : "POST",
+            body: JSON.stringify(obj),
+            headers:{
+                'Content-Type':"application/json"
+            }
+        })
+        .then(y=>y.json())
+        .then(y=>{
+            console.log(y)
+        })
+    }
+    
+    
+    </script>
+</body>
+</html>

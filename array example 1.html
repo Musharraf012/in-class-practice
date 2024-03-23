@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-         <ul id="display">CITIES
+  </head>
+  <body>
+    <ul id="display">
+      CITIES
+    </ul>
 
-</ul>
-    
-<script>
+    <script>
+      let array = ["vadodara", "pune", "surat", "ahmedabad"];
 
-let array = ["vadodara","pune","surat","ahmedabad"];
+    //   let i = 0;
+    //   while (i < array.length) {
+    //     document.getElementById("display").innerHTML +=
+    //       "<li>" + array[i] + "</li>";
+    //     i++;
+    //   }
 
-let i = 0;
-while(i<array.length){
-    document.getElementById("display").innerHTML += "<li>"+array[i]+"</li>"
-    i=i+1
-}
-</script>
-</body>
+    for(let i=0;i<array.length;i++){
+        document.getElementById("display").innerHTML+=`<li>${array[i]}</li>`
+    }
+    </script>
+  </body>
 </html>
